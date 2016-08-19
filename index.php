@@ -1,6 +1,7 @@
 <?php
 
 include 'arvore.class.php';
+include 'no.class.php';
 
 $no1 = New No();
 $arvore = New Arvore();
