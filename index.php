@@ -3,7 +3,7 @@
 include 'arvore.class.php';
 include 'no.class.php';
 
-$no1 = New No();
+$no1 = New No(8);
 $arvore = New Arvore();
 
 echo '<pre>';
@@ -28,13 +28,16 @@ $arvore->inserir($no1, 7);
 echo '<br>Ordenamento ';
 $arvore->em_ordem($no1);
 echo '<br>';
-print_r($no1->direita->esquerda->esquerda->esquerda);
 
-
-$no2 = $arvore->remove_valor_minimo_da_arvore($no1->direita->esquerda->esquerda->esquerda);
+$no2 = $arvore->remove_valor_minimo_da_arvore($no1);
 
 echo '<br>Ordenamento ';
 $arvore->em_ordem($no2);
+
+echo '<br>Prefixado ';
+$arvore->prefixado($no2);
+echo '<br>Posfixado ';
+$arvore->posfixado($no2);
 
 // $no3 = $arvore->remove_valor_minimo_da_arvore($no2);
 
@@ -48,5 +51,5 @@ $arvore->em_ordem($no2);
 
 // echo '<br>Prefixado ';
 // $arvore->prefixado($no1);
-
+echo '<br><br><br>';
 print_r($no1);

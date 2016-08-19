@@ -6,7 +6,7 @@ class No {
     public $valor;
 
     public function __construct($valor = '') {
-        if ( $valor != ' ') {
+        if ( $valor != ' ' && !is_null($valor) ) {
             $this->valor = $valor;
         }
     }

@@ -68,4 +68,18 @@ class Arvore {
             $this->em_ordem($no->direita);
         }
     }
+
+    public function desenha_niveis($no) { //método inacabado... quando pronto irá imprimir uma tabela com o desenho da árvore.
+        if ($no->valor != null) {
+            echo '<tr>';
+            echo '<td>'.$no->valor.'</td>';
+            echo '</tr>';
+        }
+    }
+
+    public function desenha_arvore($no) {
+        echo '<table>';
+        $this->desenha_niveis($no);
+        echo '</table>';
+    }
 }
