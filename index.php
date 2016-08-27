@@ -2,6 +2,25 @@
 
 include 'arvore.class.php';
 include 'no.class.php';
+include 'linear.class.php';
+
+$linear = new Linear();
+$linear->set_array(3);
+$linear->set_array(5);
+$linear->set_array(2);
+$linear->set_array(9);
+$linear->set_array(1);
+$linear->print_array();
+$el = 11;
+echo 'Buscando elemento '.$el;
+
+if ( $linear->search($el) !== 'false' ) {
+	echo '<br>Elemento encontrado no indice '.$linear->search($el);
+} else {
+	echo '<br>Elemento '.$el.' não existe dentro da estrutura.';
+}
+
+echo '<br>---------------<br>';
 
 $no1 = New No(8);
 $arvore = New Arvore();
@@ -38,6 +57,16 @@ echo '<br>Prefixado ';
 $arvore->prefixado($no2);
 echo '<br>Posfixado ';
 $arvore->posfixado($no2);
+
+$num = 14;
+echo '<br>Buscando número '.$num.'<br>';
+$result = $arvore->buscar($no1, $num);
+var_dump($result);
+if ($result !== 'false') {
+	echo '<br>Valor encontrado no nível: '.$result.'<br>';
+} else {
+	echo '<br>Valor não encontrado na árvore<br>';
+}
 
 // $no3 = $arvore->remove_valor_minimo_da_arvore($no2);
 

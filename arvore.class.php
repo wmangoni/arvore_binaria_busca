@@ -32,6 +32,26 @@ class Arvore {
         }
     }
 
+    public function buscar($node, $valor, $nivel = 9) {
+
+        if ( $node->valor == $valor ) {
+            return $nivel;
+
+        } elseif ( $node->valor < $valor && is_object($node->direita) ) {
+            echo 'direita<br>';
+            $nivel++;
+            $this->buscar($node->direita, $valor, $nivel);
+
+        } elseif ( $node->valor > $valor && is_object($node->esquerda) ) {
+            echo 'esquerda<br>';
+            $nivel++;
+            $this->buscar($node->esquerda, $valor, $nivel);
+
+        } else {
+            return 'false';
+        }
+    }
+
     public function remove_valor_minimo_da_arvore($node) {
         if ($node == NULL) {
             echo "<br> Árvore vazia. <br>";
